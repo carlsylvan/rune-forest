@@ -1,10 +1,16 @@
 import { IRune } from "../models/IRune";
 
-export const fetchFromLocalStorage = () => {
-    const localStorageRunes = localStorage.getItem("localStorageRunes");
-    return localStorageRunes ? JSON.parse(localStorageRunes) : [];
-  };
-  
-  export const sendToLocalStorage = (runes: IRune[]) => {
-      localStorage.setItem("localStorageRunes", JSON.stringify(runes));
+export const fetchFromLocalStorage = (): IRune[] => {
+  const storedRunes = localStorage.getItem("localStorageRunes");
+  if (storedRunes) {
+    return JSON.parse(storedRunes) as IRune[];
+  } else {
+    return [];
+  }
+};
+
+export const saveToLocalStorage = (rune: IRune) => {
+    const localRunes: IRune[] = fetchFromLocalStorage();
+    const updatedRunes = [...localRunes, rune];
+    localStorage.setItem("localStorageRunes", JSON.stringify(updatedRunes));
   };
