@@ -1,6 +1,6 @@
 import sqlite from 'sqlite3';
 
-const db = new sqlite.Database('./database.db');
+export const db = new sqlite.Database('./database.db');
 
 const createQueries = [
 
