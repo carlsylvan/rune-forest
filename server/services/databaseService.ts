@@ -19,7 +19,7 @@ createQueries.forEach(query => {
     });
 });
 
-module.exports.addRune = (text, author) => {
+export const addRune = (text, author) => {
     const query = `INSERT INTO runes (text, author) VALUES ('${text}', '${author}')`;
     db.run(query, (err) => {
         if (err) {
