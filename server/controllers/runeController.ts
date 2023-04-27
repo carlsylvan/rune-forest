@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { Request, Response } from 'express';
 import { addRune, db } from "../services/databaseService"
 
 export const RuneController = {
@@ -20,12 +20,16 @@ export const RuneController = {
     },
     newRune: (req:any, res:any) => {
         const { text, author } = req.body
-
         addRune(text, author, (error: any) => {
             if (error) {
                 res.status(500).send(error)
             } else {
-                res.sendStatus(200)
+                db.get(`SELECT * FROM runes WHERE id = last_insert_rowid()`, (err, row) => {
+                    if (err) {
+                        throw err;
+                    }
+                    res.send(row);
+                });
             }
         })
     }

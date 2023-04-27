@@ -14,10 +14,9 @@ const createQueries = [
 createQueries.forEach(query => {
     db.run(query)
 });
-
 export const addRune = (text: string, author: string, callback: any) => {
     const query = `
-        INSERT INTO accounts (text, author)
+        INSERT INTO runes (text, author)
         VALUES (?, ?)
     `
     const values = [

@@ -1,16 +1,16 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import { RuneController } from "../controllers/runeController";
 
 export const runesRouter = express.Router();
 
-runesRouter.get('/runes', (req, res) => {
+runesRouter.get('/', (req: Request, res: Response) => {
     RuneController.getRunes(req, res);
 });
 
-// runesRouter.get('/runes/:id', (req, res) => {
-//     RuneController.getRuneById(req, res);
-// });
+runesRouter.get('/:id', (req, res) => {
+    RuneController.getRuneById(req, res);
+});
 
-runesRouter.post('/runes', (req, res, next) => {
+runesRouter.post('/', (req, res, next) => {
     RuneController.newRune(req, res);
 });
