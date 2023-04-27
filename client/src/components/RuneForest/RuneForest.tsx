@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { getRunes } from "../../services/runeService";
 import { IRune } from "../../models/IRune";
+import { Runestone } from "../Runestone/Runestone";
+import "./RuneForest.css";
 
 export const RuneForest = () => {
 
@@ -15,7 +17,14 @@ export const RuneForest = () => {
 
   return (
     <div>
-      <h1>Welcome to Rune-forest!</h1>
+      <h1>Rune Forest</h1>
+
+      {runes.map((rune) => (
+        <Runestone key={rune.id}>
+          <h2>{rune.text}</h2>
+          <h3>//{rune.author}</h3>
+        </Runestone>
+      ))}
     </div>
   );
 };
