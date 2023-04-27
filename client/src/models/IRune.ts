@@ -3,3 +3,8 @@ export interface IRune {
     text: string;
     author: string;
 }
+
+export interface INewRune {
+    text: string;
+    author: string;
+}

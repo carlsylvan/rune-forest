@@ -1,5 +1,5 @@
 import axios from "axios";
-import { IRune } from "../models/IRune";
+import { INewRune, IRune } from "../models/IRune";
 
 export const URL = "http://localhost:8008";
 
@@ -17,8 +17,8 @@ export const getRuneById = async (id: number) => {
     return response.data;
 };
 
-export const writeRune = async (rune: IRune) => {
-    let response = await axios.post<IRune>(
+export const writeRune = async (rune: INewRune) => {
+    let response = await axios.post<INewRune>(
         URL + '/runes',
         rune
     );
