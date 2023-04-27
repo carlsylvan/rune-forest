@@ -32,5 +32,13 @@ export const RuneController = {
                 });
             }
         })
-    }
+    },
+    deleteRuneById: (req: Request, res: Response) => {
+        db.run(`DELETE FROM runes WHERE id = ${req.params.id}`, (err: any, row: any) => {
+            if (err) {
+                throw err;
+            }
+            res.send(row);
+        });
+    },
 };
