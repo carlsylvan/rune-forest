@@ -26,7 +26,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       setRunes(runes);
       console.log(runes);
     });
-  }, [writeRune]);
+  }, []);
 
   return (
     <div>
@@ -40,7 +40,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       {runes.map((rune) => (
         <Runestone key={rune.id}>
           <h2>{rune.text}</h2>
-          <h3>//{rune.author}</h3>
+          <h3>{rune.author}</h3>
         </Runestone>
       ))}
     </div>
