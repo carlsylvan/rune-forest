@@ -9,12 +9,13 @@ export const RuneForest = () => {
   useEffect(() => {
     getRunes().then((runes) => {
       setRunes(runes);
+      console.log(runes);
     });
-    console.log(runes);
   }, []);
 
-
-    return (<div>
+  return (
+    <div>
       <h1>Welcome to Rune-forest!</h1>
-    </div>);
+    </div>
+  );
 };
