@@ -1,7 +1,7 @@
 import axios from "axios";
 import { IRune } from "../models/IRune";
 
-export const URL = "http://localhost:5000";
+export const URL = "http://localhost:8008";
 
 export const getRunes = async () => {
     let response = await axios.get<IRune[]>(
