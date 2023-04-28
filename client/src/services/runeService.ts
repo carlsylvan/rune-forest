@@ -25,7 +25,7 @@ export const writeRune = async (rune: INewRune) => {
     return response.data;
 }
 
-export const deleteRune = async (id: number) => {
+export const deleteRuneById = async (id: number) => {
     let response = await axios.delete<IRune>(
         URL + '/runes/' + id
     );

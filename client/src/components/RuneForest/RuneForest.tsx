@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getRunes, writeRune } from "../../services/runeService";
+import { deleteRuneById, getRunes, writeRune } from "../../services/runeService";
 import { INewRune, IRune } from "../../models/IRune";
 import { Runestone } from "../Runestone/Runestone";
 import "./RuneForest.css";
@@ -21,6 +21,13 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
   });
 };
 
+const deleteClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  e.preventDefault();
+  const id = e.currentTarget.id;
+  deleteRuneById(parseInt(id)).then((rune) => {
+    console.log(rune);
+  })};
+
   useEffect(() => {
     getRunes().then((runes) => {
       setRunes(runes);
@@ -41,6 +48,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         <Runestone key={rune.id}>
           <h2>{rune.text}</h2>
           <h3>{rune.author}</h3>
+          <button onClick={deleteClick}>Delete</button>
         </Runestone>
       ))}
     </div>
