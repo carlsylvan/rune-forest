@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
-import { deleteRuneById, getRunes, writeRune } from "../../services/runeService";
+import {
+  deleteRuneById,
+  getRunes,
+  writeRune,
+} from "../../services/runeService";
 import { INewRune, IRune } from "../../models/IRune";
 import { Runestone } from "../Runestone/Runestone";
 import "./RuneForest.css";
@@ -9,24 +13,25 @@ export const RuneForest = () => {
   const [text, setText] = useState<string>("");
   const [author, setAuthor] = useState<string>("");
 
-const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-  const newRune: INewRune = {
-    text: text,
-    author: author,
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const newRune: INewRune = {
+      text: text,
+      author: author,
+    };
+    writeRune(newRune).then((rune) => {
+      setText("");
+      setAuthor("");
+    });
   };
-  writeRune(newRune).then((rune) => {
-    setText("");
-    setAuthor("");
-  });
-};
 
-const deleteClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-  e.preventDefault();
-  const id = e.currentTarget.id;
-  deleteRuneById(parseInt(id)).then((rune) => {
-    console.log(rune);
-  })};
+  const deleteClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const id = e.currentTarget.id;
+    deleteRuneById(parseInt(id)).then((rune) => {
+      console.log(rune);
+    });
+  };
 
   useEffect(() => {
     getRunes().then((runes) => {
@@ -39,8 +44,18 @@ const deleteClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     <div>
       <h1>Rune Forest</h1>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Write your rune here" value={text} onChange={(e) => setText(e.target.value)} />
-        <input type="text" placeholder="Write your name here" value={author} onChange={(e) => setAuthor(e.target.value)} />     
+        <input
+          type="text"
+          placeholder="Write your rune here"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Write your name here"
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+        />
         <button type="submit">Write</button>
       </form>
 

@@ -1,5 +1,5 @@
 export interface IRune {
-    id: number;
-    text: string;
-    author: string;
-};
+  id: number;
+  text: string;
+  author: string;
+}
