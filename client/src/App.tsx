@@ -1,6 +1,6 @@
-import React from 'react';
-import './App.css';
-import { RuneForest } from './components/RuneForest/RuneForest';
+import React from "react";
+import "./App.css";
+import { RuneForest } from "./components/RuneForest/RuneForest";
 
 function App() {
   return (
