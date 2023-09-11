@@ -1,4 +1,4 @@
-import { RuneController } from "../../ts-server/controllers/runeController";
+import { RuneController } from "../controllers/runeController";
 
 export const runesRouter = express.Router();
 
