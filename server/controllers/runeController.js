@@ -1,6 +1,6 @@
-import { addRune, db } from "../services/databaseService";
+var { addRune, db } = require("../services/databaseService");
 
-export const RuneController = {
+var RuneController = {
   getRunes: (req, res) => {
     db.all("SELECT * FROM runes", (err, rows) => {
       if (err) {
@@ -43,4 +43,8 @@ export const RuneController = {
       res.send(row);
     });
   },
+};
+
+module.exports = {
+  RuneController,
 };

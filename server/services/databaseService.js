@@ -1,6 +1,7 @@
-export const db = new sqlite.Database("./database.db");
+var sqlite = require("sqlite3").verbose();
+var db = new sqlite.Database("./database.db");
 
-const createQueries = [
+var createQueries = [
   `
     CREATE TABLE IF NOT EXISTS runes (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -13,12 +14,18 @@ const createQueries = [
 createQueries.forEach((query) => {
   db.run(query);
 });
-export const addRune = (text, author, callback) => {
-  const query = `
+
+var addRune = (text, author, callback) => {
+  var query = `
         INSERT INTO runes (text, author)
         VALUES (?, ?)
     `;
-  const values = [text, author];
+  var values = [text, author];
 
   db.run(query, values, callback);
+};
+
+module.exports = {
+  db,
+  addRune,
 };

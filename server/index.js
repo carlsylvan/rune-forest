@@ -1,6 +1,7 @@
-import { runesRouter } from "./routers/runesRouter";
-
-const app = express();
+var express = require("express");
+var cors = require("cors");
+var runesRouter = require("./routers/runesRouter");
+var app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
