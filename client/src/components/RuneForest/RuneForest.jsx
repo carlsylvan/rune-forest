@@ -1,8 +1,14 @@
 import { useState } from "react";
-import "/RuneForest.css";
+import "./RuneForest.css";
 
 export const RuneForest = () => {
-  const [runes, setRunes] = useState([]);
+  const [runes, setRunes] = useState([
+    {
+      id: 1,
+      text: "Hej hej",
+      author: "Carl",
+    },
+  ]);
   const [text, setText] = useState("");
   const [author, setAuthor] = useState("");
 
