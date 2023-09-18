@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import "/RuneForest.css";
+import "./RuneStone.css";
 
 export const RuneStone = (props) => {
   return <div>{props.children}</div>;

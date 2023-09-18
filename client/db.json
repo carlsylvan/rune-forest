@@ -9,6 +9,11 @@
       "id": 2,
       "text": "Second rune",
       "author": "Author2"
+    },
+    {
+      "text": "hej",
+      "author": "Carl",
+      "id": 3
     }
   ]
 }
