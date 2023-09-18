@@ -1,45 +1,41 @@
 import { useEffect, useState } from "react";
+import "./RuneForest.css";
 import {
   deleteRuneById,
   getRunes,
   writeRune,
 } from "../../services/runeService";
-import { INewRune, IRune } from "../../models/IRune";
-import { Runestone } from "../Runestone/Runestone";
-import "./RuneForest.css";
+import { RuneStone } from "../RuneStone/RuneStone";
 
 export const RuneForest = () => {
-  const [runes, setRunes] = useState<IRune[]>([]);
-  const [text, setText] = useState<string>("");
-  const [author, setAuthor] = useState<string>("");
+  const [runes, setRunes] = useState([]);
+  const [text, setText] = useState("");
+  const [author, setAuthor] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    const newRune: INewRune = {
-      text: text,
-      author: author,
+    const newRune = {
+      text,
+      author,
     };
     writeRune(newRune).then((rune) => {
       setText("");
       setAuthor("");
+      setRunes((prevRunes) => [...prevRunes, rune]);
     });
   };
 
-  const deleteClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    const id = e.currentTarget.id;
-    deleteRuneById(parseInt(id)).then((rune) => {
-      console.log(rune);
+  const deleteClick = (id) => {
+    deleteRuneById(id).then(() => {
+      setRunes((prevRunes) => prevRunes.filter((rune) => rune.id !== id));
     });
   };
 
   useEffect(() => {
     getRunes().then((runes) => {
       setRunes(runes);
-      console.log(runes);
     });
   }, []);
-
   return (
     <div>
       <h1>Rune Forest</h1>
@@ -60,11 +56,11 @@ export const RuneForest = () => {
       </form>
 
       {runes.map((rune) => (
-        <Runestone key={rune.id}>
+        <RuneStone key={rune.id}>
           <h2>{rune.text}</h2>
           <h3>{rune.author}</h3>
-          <button onClick={deleteClick}>Delete</button>
-        </Runestone>
+          <button onClick={() => deleteClick(rune.id)}>Delete</button>
+        </RuneStone>
       ))}
     </div>
   );
