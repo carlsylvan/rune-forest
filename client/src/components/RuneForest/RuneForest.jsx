@@ -21,11 +21,14 @@ export const RuneForest = () => {
     writeRune(newRune).then((rune) => {
       setText("");
       setAuthor("");
+      setRunes((prevRunes) => [...prevRunes, rune]);
     });
   };
 
   const deleteClick = (id) => {
-    deleteRuneById(id);
+    deleteRuneById(id).then(() => {
+      setRunes((prevRunes) => prevRunes.filter((rune) => rune.id !== id));
+    });
   };
 
   useEffect(() => {
@@ -33,8 +36,6 @@ export const RuneForest = () => {
       setRunes(runes);
     });
   }, []);
-
-  // The return statement is now here, outside of handleSubmit but still inside RuneForest
   return (
     <div>
       <h1>Rune Forest</h1>
