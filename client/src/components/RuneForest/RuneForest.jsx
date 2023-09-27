@@ -53,14 +53,29 @@ export const RuneForest = () => {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
-        <button type="submit">Write</button>
+        <Button
+          label="Write"
+          size="large"
+          backgroundColor="antiquewhite"
+          color="white"
+          type="submit"
+        >
+          Write
+        </Button>
       </form>
 
       {runes.map((rune) => (
         <RuneStone key={rune.id}>
           <p>{rune.text}</p>
           <i>{rune.author}</i>
-          <Button onClick={() => deleteClick(rune.id)}>Delete</Button>
+          <Button
+            size="small"
+            backgroundColor="black"
+            label="Erase"
+            onClick={() => deleteClick(rune.id)}
+          >
+            Delete
+          </Button>
         </RuneStone>
       ))}
     </div>
