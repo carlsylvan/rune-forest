@@ -6,6 +6,7 @@ import {
   writeRune,
 } from "../../services/runeService";
 import { RuneStone } from "../RuneStone/RuneStone";
+import { Button } from "../../stories/Button";
 
 export const RuneForest = () => {
   const [runes, setRunes] = useState([]);
@@ -59,7 +60,7 @@ export const RuneForest = () => {
         <RuneStone key={rune.id}>
           <p>{rune.text}</p>
           <i>{rune.author}</i>
-          <button onClick={() => deleteClick(rune.id)}>Delete</button>
+          <Button onClick={() => deleteClick(rune.id)}>Delete</Button>
         </RuneStone>
       ))}
     </div>
