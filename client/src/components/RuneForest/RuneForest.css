@@ -4,5 +4,16 @@ div {
   align-items: center;
   justify-content: center;
   width: 70%;
+  color: red;
   background-color: forestgreen;
+}
+
+.runestone {
+  background-color: gray;
+  border-radius: 50% 50% 0 0;
+}
+
+.blankrune {
+  background-color: gray;
+  border-radius: 50% 50% 0 0;
 }

@@ -38,9 +38,9 @@ export const RuneForest = () => {
     });
   }, []);
   return (
-    <div>
-      <h1>Rune Forest</h1>
-      <form onSubmit={handleSubmit}>
+    <div className="runeforest">
+      <h1 id="title">Rune Forest</h1>
+      <form className="blankrune" onSubmit={handleSubmit}>
         <textarea
           type="text"
           placeholder="Rune"
