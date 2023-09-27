@@ -43,13 +43,13 @@ export const RuneForest = () => {
       <form onSubmit={handleSubmit}>
         <textarea
           type="text"
-          placeholder="Write your rune here"
+          placeholder="Rune"
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
         <input
           type="text"
-          placeholder="Write your name here"
+          placeholder="Name"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
