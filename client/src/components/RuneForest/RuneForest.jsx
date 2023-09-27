@@ -40,7 +40,7 @@ export const RuneForest = () => {
     <div>
       <h1>Rune Forest</h1>
       <form onSubmit={handleSubmit}>
-        <input
+        <textarea
           type="text"
           placeholder="Write your rune here"
           value={text}
@@ -57,8 +57,8 @@ export const RuneForest = () => {
 
       {runes.map((rune) => (
         <RuneStone key={rune.id}>
-          <h2>{rune.text}</h2>
-          <h3>{rune.author}</h3>
+          <p>{rune.text}</p>
+          <i>{rune.author}</i>
           <button onClick={() => deleteClick(rune.id)}>Delete</button>
         </RuneStone>
       ))}
