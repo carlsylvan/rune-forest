@@ -11,9 +11,12 @@ div {
 .runestone {
   background-color: gray;
   border-radius: 50% 50% 0 0;
+  width: 50%;
 }
 
 .blankrune {
+  display: flex;
   background-color: gray;
   border-radius: 50% 50% 0 0;
+  height: 300px;
 }

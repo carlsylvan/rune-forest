@@ -9,6 +9,41 @@
       "id": 2,
       "text": "Second rune",
       "author": "Author2"
+    },
+    {
+      "text": "Tredje",
+      "author": "Carl",
+      "id": 3
+    },
+    {
+      "text": "Fjärde",
+      "author": "Carl",
+      "id": 4
+    },
+    {
+      "text": "Femte",
+      "author": "Carl",
+      "id": 5
+    },
+    {
+      "text": "Sjätte",
+      "author": "Carl",
+      "id": 6
+    },
+    {
+      "text": "En till",
+      "author": "Carl",
+      "id": 7
+    },
+    {
+      "text": "mera",
+      "author": "Carl",
+      "id": 8
+    },
+    {
+      "text": "Hej",
+      "author": "Carl",
+      "id": 9
     }
   ]
 }
