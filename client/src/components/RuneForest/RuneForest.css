@@ -16,7 +16,12 @@ div {
 
 .blankrune {
   display: flex;
+  flex-direction: column;
   background-color: gray;
   border-radius: 50% 50% 0 0;
   height: 300px;
+  width: 70%;
+}
+textarea {
+  height: 70%;
 }
