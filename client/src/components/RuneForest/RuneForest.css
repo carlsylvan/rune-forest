@@ -8,6 +8,16 @@ div {
   background-color: forestgreen;
 }
 
+.runeforest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  color: red;
+  background-color: forestgreen;
+}
+
 .runestone {
   background-color: gray;
   border-radius: 50% 50% 0 0;
