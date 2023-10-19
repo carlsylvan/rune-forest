@@ -6,7 +6,7 @@ import "./RuneForest.css";
 //   writeRune,
 // } from "../../services/runeService";
 import { RuneStone } from "../RuneStone/RuneStone";
-import { Button } from "../../stories/Button";
+import { Button } from "../Button/Button";
 
 export default function RuneForest() {
   const [runes, setRunes] = useState([]);
