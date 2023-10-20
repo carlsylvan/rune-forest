@@ -16,8 +16,8 @@ export const RuneForest = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newRune = {
-      text,
-      author,
+      text: text,
+      author: author,
     };
     writeRune(newRune).then((rune) => {
       setText("");
