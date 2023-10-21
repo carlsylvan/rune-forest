@@ -1,15 +1,18 @@
 export const URL = "http://localhost:3000";
+import axios from "axios";
+
+// export const getRunes = async () => {
+//   let response = await fetch(URL + "/runes");
+//   let data = await response.json();
+//   return data;
+// };
 
 export const getRunes = async () => {
-  let response = await fetch(URL + "/runes");
-  let data = await response.json();
-  return data;
+  return axios.get(URL + "/runes");
 };
 
 export const getRuneById = async (id) => {
-  let response = await fetch(URL + "/runes/" + id);
-  let data = await response.json();
-  return data;
+  return axios.get(URL + "/runes/" + id);
 };
 
 export const writeRune = async (newRune) => {
