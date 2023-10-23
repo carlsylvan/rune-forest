@@ -75,7 +75,7 @@ export const RuneForest = () => {
             size="small"
             backgroundColor="black"
             label="Erase"
-            onClick={() => deleteClick(rune.id)}
+            onClick={() => deleteClick(rune._id)}
           >
             Delete
           </Button>
