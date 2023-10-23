@@ -28,7 +28,7 @@ export const RuneForest = () => {
 
   const deleteClick = (id) => {
     deleteRuneById(id).then(() => {
-      setRunes((prevRunes) => prevRunes.filter((rune) => rune.id !== id));
+      setRunes((prevRunes) => prevRunes.filter((rune) => rune._id !== id));
     });
   };
 

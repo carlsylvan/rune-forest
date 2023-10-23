@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 require("dotenv").config();
 
 const mongoString = process.env.DATABASE_URL;
@@ -9,6 +10,7 @@ const { Rune } = require("./models/model");
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 
 app.get("/runes", async (req, res) => {
   const allRunes = await Rune.find();
