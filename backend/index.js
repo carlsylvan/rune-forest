@@ -31,9 +31,13 @@ app.post("/runes", async (req, res) => {
 
 app.put("/runes/:id", async (req, res) => {
   const { id } = req.params;
-  await Rune.updateOne({ id }, req.body);
-  const updatedRune = await Rune.findById(id);
-  res.status(200).json(updatedRune);
+  const updatedRune = await Rune.findByIdAndUpdate(id, req.body, { new: true });
+
+  if (!updatedRune) {
+    return res.status(404).json({ message: "Rune not found" });
+  }
+
+  return res.status(200).json(updatedRune);
 });
 
 app.delete("/runes/:id", async (req, res) => {

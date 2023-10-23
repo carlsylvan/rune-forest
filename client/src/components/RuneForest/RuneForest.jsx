@@ -27,11 +27,14 @@ export const RuneForest = () => {
   };
 
   const deleteClick = (id) => {
-    deleteRuneById(id).then(() => {
-      setRunes((prevRunes) => prevRunes.filter((rune) => rune._id !== id));
-    });
+    deleteRuneById(id)
+      .then(() => {
+        setRunes((prevRunes) => prevRunes.filter((rune) => rune._id !== id));
+      })
+      .catch((error) => {
+        console.error("Error deleting rune:", error);
+      });
   };
-
   useEffect(() => {
     getRunes().then((runes) => {
       setRunes(runes);
