@@ -65,7 +65,7 @@ export const RuneForest = () => {
       </form>
 
       {runes.map((rune) => (
-        <RuneStone key={rune.id}>
+        <RuneStone key={rune._id}>
           <p>{rune.text}</p>
           <i>{rune.author}</i>
           <Button
