@@ -1,0 +1,39 @@
+.write-rune-button {
+  font-weight: 600;
+  background-color: grey;
+  border: 2px var(--green) solid;
+  color: var(--green);
+  border-radius: 50px;
+  font-size: 14px;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.write-rune-button.sm {
+  height: 4rem;
+  width: 14rem;
+  font-size: var(--font-size-xx-small);
+}
+
+.write-rune-button.md {
+  height: 5.8rem;
+  width: 16.5rem;
+  font-size: var(--font-size-xx-small);
+}
+
+.write-rune-button.lg {
+  height: 8rem;
+  width: 22rem;
+  font-size: var(--font-size-small);
+}
+
+.write-rune-button.white {
+  color: white;
+}
+
+.write-rune-button.green {
+  color: green;
+}
+.write-rune-button.black {
+  color: black;
+}
