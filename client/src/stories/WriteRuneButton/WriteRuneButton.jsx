@@ -14,5 +14,5 @@ WriteRuneButton.propTypes = {
   label: PropTypes.string,
   size: PropTypes.oneOf(["sm", "md", "lg"]),
   color: PropTypes.oneOf(["green", "white", "black"]),
-  onclick: PropTypes.func,
+  onClick: PropTypes.func,
 };

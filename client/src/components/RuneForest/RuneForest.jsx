@@ -7,6 +7,7 @@ import {
 } from "../../services/runeService";
 import { RuneStone } from "../RuneStone/RuneStone";
 import { Button } from "../../stories/Button";
+import WriteRuneButton from "../../stories/WriteRuneButton/WriteRuneButton";
 
 export const RuneForest = () => {
   const [runes, setRunes] = useState([]);
@@ -56,15 +57,12 @@ export const RuneForest = () => {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
-        <Button
+        <WriteRuneButton
           label="Write"
-          size="large"
-          backgroundColor="antiquewhite"
-          color="white"
+          size="md"
+          color="green"
           type="submit"
-        >
-          Write
-        </Button>
+        ></WriteRuneButton>
       </form>
 
       {runes.map((rune) => (
