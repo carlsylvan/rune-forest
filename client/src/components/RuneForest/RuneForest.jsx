@@ -62,6 +62,7 @@ export const RuneForest = () => {
           size="md"
           color="green"
           type="submit"
+          onClick={handleSubmit}
         ></WriteRuneButton>
       </form>
 

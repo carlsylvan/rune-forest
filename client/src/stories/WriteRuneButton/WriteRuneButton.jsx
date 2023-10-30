@@ -4,9 +4,7 @@ import "./writeRuneButton.css";
 
 export default function WriteRuneButton({ color, size, label }) {
   return (
-    <button type="button" className={`write-rune-button ${color} ${size}`}>
-      {label}
-    </button>
+    <button className={`write-rune-button ${color} ${size}`}>{label}</button>
   );
 }
 
